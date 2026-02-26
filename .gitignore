@@ -1,0 +1,21 @@
+# StudyApp — Dependencies
+node_modules
+dist
+dist-electron
+dist-electron-build
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+*.suo
+*.user
+
+# Electron build artifacts
+out/
