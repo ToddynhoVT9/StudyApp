@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.editor {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.editor:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
+
+/* Override CodeMirror defaults */
+.editor :global(.cm-editor) {
+  min-height: 180px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.editor :global(.cm-scroller) {
+  overflow: auto;
+}
+
+.status {
+  font-size: 11px;
+  text-align: right;
+  padding-right: 2px;
+  transition: color var(--transition);
+}
+
+.statusSaved   { color: var(--color-accent-green); }
+.statusPending { color: var(--color-accent-yellow); }

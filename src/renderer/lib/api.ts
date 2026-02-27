@@ -65,4 +65,13 @@ export const api = {
     remove: (id: number) =>
       invoke<void>('studies:remove', id),
   },
+  settings: {
+    getStore: () => invoke<any>('settings:getStore'),
+    setStore: (key: string, value: any) =>
+      invoke<void>('settings:setStore', key, value),
+    resetProgress: () =>
+      invoke<void>('settings:resetProgress'),
+    dbPath: () =>
+      invoke<string>('settings:dbPath'),
+  },
 }

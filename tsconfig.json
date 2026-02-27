@@ -21,6 +21,5 @@
       "@main/*": ["src/main/*"]
     }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src/**/*", "src/renderer/vite-env.d.ts"]
 }

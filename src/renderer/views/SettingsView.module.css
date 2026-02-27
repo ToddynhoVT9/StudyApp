@@ -1,0 +1,136 @@
+.view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  padding: 24px 28px 16px;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+/* ── Body ───────────────────────── */
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Sections ───────────────────── */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ── Rows ───────────────────────── */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 4px 0;
+}
+
+.rowLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.rowLabel span {
+  font-size: 13px;
+  color: var(--color-text-primary);
+}
+
+.rowLabel small {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.rowDanger {
+  border-top: 1px solid var(--color-border);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+/* ── Controls ───────────────────── */
+.select {
+  width: auto;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.code {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-app);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 260px;
+  flex-shrink: 0;
+}
+
+.dangerBtn {
+  background: rgba(248, 81, 73, 0.1);
+  border-color: rgba(248, 81, 73, 0.3);
+  color: var(--color-accent-red);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.dangerBtn:hover {
+  background: rgba(248, 81, 73, 0.2);
+  border-color: var(--color-accent-red);
+}
+
+/* ── About card ─────────────────── */
+.aboutCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.aboutCard strong { color: var(--color-text-primary); }
+.aboutCard em     { color: var(--color-accent); font-style: normal; }

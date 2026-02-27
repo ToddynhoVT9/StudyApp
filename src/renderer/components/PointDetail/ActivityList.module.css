@@ -1,0 +1,100 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  padding: 4px 0;
+}
+
+.items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+  overflow: hidden;
+}
+
+.item:hover { background: var(--color-bg-hover); }
+
+.checkbox {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  accent-color: var(--color-accent-green);
+  cursor: pointer;
+}
+
+.desc {
+  flex: 1;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.done {
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
+.removeBtn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  padding: 2px 5px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: opacity var(--transition), color var(--transition), background var(--transition);
+  flex-shrink: 0;
+}
+
+.item:hover .removeBtn { opacity: 1; }
+.removeBtn:hover {
+  color: var(--color-accent-red);
+  background: rgba(248, 81, 73, 0.1);
+}
+
+/* ── Add row ────────────────────── */
+.addRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.input { flex: 1; }
+
+.addBtn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  background: rgba(88, 166, 255, 0.1);
+  border-color: rgba(88, 166, 255, 0.3);
+  color: var(--color-accent);
+}
+
+.addBtn:hover:not(:disabled) {
+  background: rgba(88, 166, 255, 0.2);
+}
+
+.addBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}

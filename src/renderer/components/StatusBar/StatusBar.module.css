@@ -1,0 +1,39 @@
+.bar {
+  grid-area: statusbar;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 16px;
+  background: var(--color-bg-sidebar);
+  border-top: 1px solid var(--color-border);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  user-select: none;
+}
+
+.label {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.label strong { color: var(--color-text-primary); }
+
+.track {
+  flex: 1;
+  height: 4px;
+  background: var(--color-bg-hover);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: var(--color-accent-green);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.pct {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.pct strong { color: var(--color-accent-green); }

@@ -19,3 +19,7 @@ Thumbs.db
 
 # Electron build artifacts
 out/
+
+#others
+.plans
+.PlanosDeEstudos

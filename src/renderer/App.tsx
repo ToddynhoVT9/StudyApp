@@ -1,25 +1,32 @@
-import styles from './App.module.css'
+// src/renderer/App.tsx — router raiz com carregamento inicial do store
+import { HashRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { AppLayout }       from './components/AppLayout/AppLayout'
+import { RoadmapView }     from './views/RoadmapView'
+import { PointDetailView } from './views/PointDetailView'
+import { BlockView }       from './views/BlockView'
+import { NotesView }       from './views/NotesView'
+import { SettingsView }    from './views/SettingsView'
+import { useRoadmapStore } from './lib/store'
 
-// ─── App placeholder (Fase 0) ────────────────────────────────────
-// Nas próximas fases este arquivo será substituído pelo
-// HashRouter + AppLayout + Routes completos.
 export function App() {
+  const loadAll = useRoadmapStore((s) => s.loadAll)
+
+  useEffect(() => {
+    loadAll()
+  }, [loadAll])
+
   return (
-    <div className={styles.splash}>
-      <div className={styles.card}>
-        <div className={styles.logo}>🗺️</div>
-        <h1 className={styles.title}>StudyApp</h1>
-        <p className={styles.subtitle}>Fase 0 — Setup concluído</p>
-        <p className={styles.hint}>
-          React + Electron + TypeScript estão funcionando.
-        </p>
-        <div className={styles.badges}>
-          <span className={styles.badge}>React 18</span>
-          <span className={styles.badge}>Electron</span>
-          <span className={styles.badge}>TypeScript</span>
-          <span className={styles.badge}>Vite</span>
-        </div>
-      </div>
-    </div>
+    <HashRouter>
+      <AppLayout>
+        <Routes>
+          <Route path="/"          element={<RoadmapView />}     />
+          <Route path="/block/:blockId" element={<BlockView />}  />
+          <Route path="/point/:id" element={<PointDetailView />} />
+          <Route path="/notes"     element={<NotesView />}       />
+          <Route path="/settings"  element={<SettingsView />}    />
+        </Routes>
+      </AppLayout>
+    </HashRouter>
   )
 }

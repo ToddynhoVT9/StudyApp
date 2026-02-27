@@ -1,0 +1,124 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+  overflow: hidden;
+}
+
+.item:hover { background: var(--color-bg-hover); }
+
+.typeIcon {
+  font-size: 14px;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.studyContent {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.studyTitle {
+  font-size: 13px;
+  color: var(--color-text-primary);
+}
+
+.link {
+  font-size: 13px;
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+
+.link:hover { text-decoration: underline; }
+
+.removeBtn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  padding: 2px 5px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: opacity var(--transition), color var(--transition), background var(--transition);
+  flex-shrink: 0;
+}
+
+.item:hover .removeBtn { opacity: 1; }
+.removeBtn:hover {
+  color: var(--color-accent-red);
+  background: rgba(248, 81, 73, 0.1);
+}
+
+/* ── Form ───────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.input  { width: 100%; }
+.select { width: 100%; }
+
+.formActions {
+  display: flex;
+  gap: 8px;
+}
+
+.saveBtn {
+  background: rgba(88, 166, 255, 0.12);
+  border-color: rgba(88, 166, 255, 0.3);
+  color: var(--color-accent);
+}
+
+.saveBtn:hover:not(:disabled) { background: rgba(88, 166, 255, 0.22); }
+.saveBtn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.cancelBtn { color: var(--color-text-secondary); }
+
+/* ── Add button ─────────────────── */
+.addBtn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px dashed var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.addBtn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(88, 166, 255, 0.06);
+}

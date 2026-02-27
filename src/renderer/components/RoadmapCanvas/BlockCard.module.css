@@ -1,0 +1,148 @@
+.card {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  border-color: var(--color-accent-muted);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ── Header ────────────────────── */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.blockNum {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.blockTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.duration {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.progressLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.progressLabel small {
+  font-weight: 400;
+  font-size: 11px;
+}
+
+/* ── Progress bar ──────────────── */
+.progressTrack {
+  height: 3px;
+  background: var(--color-bg-hover);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-yellow) 0%,
+    var(--color-accent-green) 100%
+  );
+  border-radius: 99px;
+}
+
+/* ── Points list ───────────────── */
+.points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.point {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+
+.point:hover { background: var(--color-bg-hover); }
+
+.statusBtn {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--transition), transform 0.1s;
+}
+
+.statusBtn:hover {
+  background: var(--color-bg-app);
+  transform: scale(1.15);
+}
+
+.pointTitle {
+  flex: 1;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.pointTitle:hover { color: var(--color-accent); }
+
+.pointDone {
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.weeks {
+  font-size: 10px;
+  color: var(--color-accent-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
